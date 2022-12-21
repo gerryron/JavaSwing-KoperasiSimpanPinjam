@@ -86,7 +86,7 @@ public class DataPinjamView {
 		frmDataPinjam = new JFrame();
 		frmDataPinjam.setTitle("Data Pinjam");
 		frmDataPinjam.setBounds(100, 100, 537, 392);
-		frmDataPinjam.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmDataPinjam.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
         panel.setBackground(Color.WHITE);

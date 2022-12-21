@@ -1,6 +1,8 @@
 package view;
 
 import dao.LoginDAO;
+import entity.TBLKasir;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -117,8 +119,9 @@ public class Login {
                 String kodeKasir = kodeKasirField.getText();
                 String password = new String(passwordField.getPassword());
                 try {
-                    if (loginDAO.login(kodeKasir, password)) {
-						Main.main(kodeKasir);
+                	TBLKasir kasir = loginDAO.login(kodeKasir, password);
+                    if (null != kasir.getKodeKsr()) {
+						HomeView.main(kasir.getKodeKsr(), kasir.getNamaKsr());
                         frmLOG.setVisible(false);
                     } else {
                         JOptionPane.showMessageDialog(null, "Username atau password salah !", "ERROR", JOptionPane.OK_OPTION);

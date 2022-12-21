@@ -78,7 +78,7 @@ public class DataAnggotaView {
 		frmDataAnggota = new JFrame();
 		frmDataAnggota.setTitle("Data Anggota");
 		frmDataAnggota.setBounds(100, 100, 537, 392);
-		frmDataAnggota.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmDataAnggota.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
         panel.setBackground(Color.WHITE);

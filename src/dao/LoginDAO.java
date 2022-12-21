@@ -14,6 +14,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import entity.TBLKasir;
+
 /**
  *
  * @author NAKES
@@ -34,8 +36,8 @@ public class LoginDAO {
         myConn = DriverManager.getConnection(dbUrl, user, password);
     }
 
-    public boolean login(String kodeKsr, String passwordKsr) throws Exception {
-        boolean result = false;
+    public TBLKasir login(String kodeKsr, String passwordKsr) throws Exception {
+        TBLKasir result = new TBLKasir();
         PreparedStatement preStat = null;
         ResultSet rs = null;
 
@@ -47,7 +49,9 @@ public class LoginDAO {
             rs = preStat.executeQuery();
        
             if(rs.next()) {
-                result = true;
+                result = new TBLKasir(rs.getString("KODEKSR"), 
+                		rs.getString("NAMAKSR"), 
+                		rs.getString("PASSWORDKSR"));
             }
 
         } finally {
